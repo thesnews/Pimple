@@ -1,5 +1,5 @@
 {
-    "name": "pimple/pimple",
+    "name": "thesnews/pimple",
     "type": "library",
     "description": "Pimple is a simple Dependency Injection Container for PHP 5.3",
     "keywords": ["dependency injection", "container"],
@@ -9,6 +9,10 @@
         {
             "name": "Fabien Potencier",
             "email": "fabien@symfony.com"
+        },
+        {
+            "name": "Mike Joseph",
+            "email": "mike@getsnworks.com"
         }
     ],
     "require": {
