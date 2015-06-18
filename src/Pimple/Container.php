@@ -70,7 +70,7 @@ class Container implements \ArrayAccess
             return;
         }
         
-        $this->frozen[$id] = false;
+        unset($this->frozen[$id])
     }
 
     /**
