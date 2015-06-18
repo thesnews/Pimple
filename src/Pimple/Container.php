@@ -56,21 +56,31 @@ class Container implements \ArrayAccess
             $this->offsetSet($key, $value);
         }
     }
-    
+
     /**
      * Unfreeze a service
-     * 
+     *
      * This should only be used for testing.
-     * 
+     *
      * @param string $id Unique identifier for the service
      */
     public function unfreeze($id)
     {
-        if (!isset($this->frozen[$id])) {
-            return;
+        if (isset($this->frozen[$id])) {
+            unset($this->frozen[$id]);
         }
-        
-        $this->frozen[$id];
+
+        if (isset($this->factories[$this->values[$id]])) {
+            unset($this->factories[$this->values[$id]]);
+        }
+
+        if (isset($this->values[$id])) {
+            unset($this->values[$id]);
+        }
+
+        if (isset($this->raw[$id])) {
+            unset($this->raw[$id]);
+        }
     }
 
     /**
